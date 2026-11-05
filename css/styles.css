@@ -219,6 +219,7 @@ article {
 
 .vectorOverlay {
     z-index: 2;
+    opacity: 0.15;
     /*animation: vectorFade linear both;
     animation-timeline: --scene;
     animation-range: entry 0% exit 100%;*/

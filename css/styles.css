@@ -212,17 +212,18 @@ article {
 
 .backImage {
     z-index: 1;
-    /*animation: vectorFade linear both;
+    opacity: 1;
+    animation: photoFade linear both;
     animation-timeline: --scene;
-    animation-range: entry 0% exit 100%;*/
+    animation-range: entry 0% exit 100%;
 }
 
 .vectorOverlay {
     z-index: 2;
-    opacity: 0.15;
-    /*animation: vectorFade linear both;
+    opacity: 0;
+    animation: vectorFade linear both;
     animation-timeline: --scene;
-    animation-range: entry 0% exit 100%;*/
+    animation-range: entry 0% exit 100%;
 }
 
 @keyframes photoFade {

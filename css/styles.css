@@ -102,10 +102,10 @@ article {
     gap: 32px;
     margin: 50px auto;
     max-width: 1000px;
-    
+    /*
     animation: fade linear both;
     animation-timeline: view();
-    
+    */
 }
 
 @keyframes fade {

@@ -263,14 +263,3 @@ footer {
     color:#F4F1EA;
     font-size: 20px;
 }
-
-
-.backImage {
-    opacity: 1 !important;
-    z-index: 10 !important;
-    display: block !important;
-}
-
-.vectorOverlay {
-    display: none !important;
-}

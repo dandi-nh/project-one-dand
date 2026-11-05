@@ -210,35 +210,32 @@ article {
     object-fit: contain;
 }
 
-.sceneScroll {
-    position: relative;
-    height: 200vh;
-    view-timeline-name: --scene;
-    view-timeline-axis: block;
-}
-
 .backImage {
     z-index: 1;
-    animation: photoFade linear both;
-    animation-timeline: view(block);
-    animation-range: entry 0% cover 100%;
+    animation: photoLoop 8s ease-in-out infinite;
 }
 
 .vectorOverlay {
     z-index: 2;
-    animation: vectorFade linear both;
-    animation-timeline: view(block);
-    animation-range: entry 0% cover 100%;
+    animation: vectorLoop 8s ease-in-out infinite;
 }
 
-@keyframes photoFade {
-    from { opacity: 1; }
-    to { opacity: 0; }
+@keyframes photoLoop {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
-@keyframes vectorFade {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes vectorLoop {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 /* Footer */

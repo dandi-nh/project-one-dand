@@ -227,29 +227,19 @@ article {
 }
 
 @keyframes photoFade {
-    0% {
+    from {
         opacity: 1;
     }
-
-    30% {
-        opacity: 1;
-    }
-
-    100% {
+    to {
         opacity: 0;
     }
 }
 
 @keyframes vectorFade {
-    0% {
+    from {
         opacity: 0;
     }
-
-    30% {
-        opacity: 0;
-    }
-
-    100% {
+    to {
         opacity: 1;
     }
 }

@@ -7,21 +7,20 @@
 
 /* Body copy */
 body {
-    /*max-width: 1440px;*/
     width: 100%;
+    min-height: 100vh;
     margin: 0 auto;
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr auto;
     column-gap: 24px;
 
-/* Placeholder fonts & colors */
     font-family: Helvetica, Arial, sans-serif;
     font-size: 10px;
     line-height: 1.5;
-    color: #1111;
+    color: #111;
 }
-
 /* Header */
 h1, h2, h3 {
 

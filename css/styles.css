@@ -7,7 +7,8 @@
 
 /* Body copy */
 body {
-    max-width: 1440px;
+    /*max-width: 1440px;*/
+    width: 100%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -42,6 +43,7 @@ img {
     width: 100%;
     height: auto;
     display: block;
+    top: 0;
 }
 
 /* Nav */
@@ -60,10 +62,21 @@ nav ul {
 /* Header */
 header {
     grid-column: 1/13;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    background: #111111;
+    color:#F4F1EA;
+    font-size: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
+
 .hero p {
-    width: 50%;   
+    width: 50%;
 }
 
 /* Main */
@@ -74,7 +87,7 @@ main {
 }
 
 section {
-    grid-column: 1/13;
+    grid-column: span 12;
     display: grid;
     grid-template-columns: subgrid;
 }
@@ -84,11 +97,169 @@ section h2 {
 }
 
 article {
-    grid-column: span 4;
+    grid-column: span 12;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 50px auto;
+    max-width: 1000px;
+    animation: fade linear both;
+    animation-timeline: view();
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.scrolly {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.textbox {
+    flex: 1;
+    padding: 25px;
+    border-radius: 8px;
+    background: lightgray;
+    width: max-content;
+    overflow: visible;
+}
+
+.textbox h3 {
+    font-size: 28px;
+    color: black;
+    white-space: nowrap;
+}
+
+.textbox p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+    text-align: center;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    background: #111;
+    min-width: 180px;
+    padding: 12px;
+
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 8px;
+    text-align: center;
+}
+
+.dropdown-menu a:hover {
+    color: lightgray;
+}
+
+/*CSS essentials for vector page*/
+.sceneScroll {
+    grid-column: 1 / 13;
+    position: relative;
+    height: 400vh;
+    display: block;
+
+    view-timeline-name: --scene;
+    view-timeline-axis: block;
+}
+
+.photoFrame {
+    position: sticky;
+    top: 70px;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    background: white;
+}
+
+.photoFrame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    inset: 0;
+    object-fit: contain;
+}
+
+.backImage {
+    z-index: 1;
+    animation: photoFade linear both;
+    animation-timeline: --scene;
+    animation-range: entry 0% exit 100%;
+}
+
+.vectorOverlay {
+    z-index: 2;
+    animation: vectorFade linear both;
+    animation-timeline: --scene;
+    animation-range: entry 0% exit 100%;
+}
+
+@keyframes photoFade {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes vectorFade {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Footer */
 footer {
     grid-column: 1/13;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    background: #111111;
+    color:#F4F1EA;
+    font-size: 20px;
 }
